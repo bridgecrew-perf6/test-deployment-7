@@ -1,0 +1,22 @@
+<h1>Don't be a Cower🐮. Start typing...</h1>
+
+{{! We can omit action as we are posting to the same path }}
+<form method='POST' enctype='multipart/form-data'>
+  {{! by adding encoding type "enctype="multipart/form-data" to 
+  the form element we are ensuring that binary data (file's contents) 
+  are submitted }}
+  <label for='input-message'>Message</label>
+  {{! <input type="text">  allows only single line input instead we can use textarea }}
+  <textarea
+    name='message'
+    id='input-message'
+    placeholder='Your message'
+  ></textarea>
+
+  {{! Adding the accept attribute tells the browser to 
+only allow certain file types }}
+  <label for='input-picture'>An illustrative picture</label>
+  <input id='input-picture' type='file' accept='image/*' name='picture' />
+
+  <button>Publish</button>
+</form>

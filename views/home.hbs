@@ -1,0 +1,32 @@
+<h1>{{title}}</h1>
+
+{{#each publications}}
+  <a href="/mow/{{_id}}" class="publication-item">
+
+    {{#if picture}}
+      <img src="{{picture}}" alt="some picture" />
+    {{/if}}
+    <div>
+      <p>{{message}}</p>
+      <small>{{createdAt}}</small>
+      |
+      {{!-- <small>{{creator}}</small> gives creator id not name. we need to chain a static method populate() to find() in the get route for. populate gives us an object with creator document / --}}
+      <small>{{creator.name}}</small>
+    </div>
+
+  </a>
+
+{{/each}}
+
+{{!-- If we want to implement an empty state:
+
+{{#if publications.length}}
+{{#each publications}}
+<div>
+  <p>{{ message }}</p>
+  <small>{{ createdAt }}</small>
+</div>
+{{/each}}
+{{else}}
+<p>There are no publications</p>
+{{/if}} --}}

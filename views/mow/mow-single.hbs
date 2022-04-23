@@ -1,0 +1,8 @@
+<p>{{publication.message}}</p>
+
+<small>{{publication.createdAt}}</small>|<small
+>{{publication.creator.name}}</small>
+
+<a href="/mow/{{publication._id}}/edit">Edit Mow</a>
+
+<form method="POST" action="/mow/{{publication._id}}/delete">Delete Mow</form>
